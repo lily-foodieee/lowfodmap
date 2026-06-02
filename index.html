@@ -34,14 +34,19 @@
     font-size: 16px;
   }
 
-  /* HERO */
+  /* HERO — full first screen */
   .hero {
     background: var(--beige);
-    padding: 72px 24px 64px;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     position: relative;
     overflow: hidden;
     border-bottom: 1px solid var(--beige-dark);
+    padding: 48px 24px 56px;
   }
 
   .hero::before {
@@ -64,24 +69,32 @@
     opacity: 0.4;
   }
 
-  .hero-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 480px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
 
   .hero-eyebrow {
-    font-family: 'Jost', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.2em;
+    font-size: 10px;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--moss);
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
 
   .hero h1 {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
-    font-size: clamp(32px, 7vw, 52px);
+    font-size: clamp(34px, 9vw, 52px);
     line-height: 1.15;
     color: var(--brown-dark);
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .hero h1 em {
@@ -90,40 +103,34 @@
   }
 
   .hero-subtitle {
-    font-size: 15px;
+    font-size: 14px;
     color: var(--text-muted);
-    margin-bottom: 40px;
     font-weight: 300;
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
+    line-height: 1.65;
+    margin-bottom: 40px;
   }
 
-  .hero-stats {
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    flex-wrap: wrap;
-  }
-
-  .stat {
-    text-align: center;
-  }
-
-  .stat-number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
-    font-weight: 400;
-    color: var(--brown);
-    line-height: 1;
-  }
-
-  .stat-label {
-    font-size: 11px;
-    letter-spacing: 0.1em;
+  .hero-scroll-hint {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--text-muted);
-    margin-top: 4px;
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .hero-scroll-hint::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 28px;
+    background: var(--beige-dark);
   }
 
   /* SECTION */
@@ -144,8 +151,8 @@
   .pain-block {
     background: var(--white);
     border-left: 3px solid var(--moss-light);
-    padding: 32px 28px;
-    margin-bottom: 32px;
+    padding: 28px 24px;
+    margin-bottom: 24px;
     border-radius: 0 8px 8px 0;
   }
 
@@ -171,21 +178,12 @@
     color: var(--brown-dark);
   }
 
-  .story-break {
-    text-align: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
-    color: var(--beige-dark);
-    margin: 32px 0;
-    letter-spacing: 0.2em;
-  }
-
   /* CHECKLIST */
   .checklist {
     list-style: none;
     background: var(--moss-pale);
     border-radius: 12px;
-    padding: 32px 28px;
+    padding: 28px 24px;
     margin: 32px 0;
   }
 
@@ -203,13 +201,13 @@
     content: '';
     position: absolute;
     left: 0;
-    top: 15px;
+    top: 17px;
     width: 14px;
     height: 1px;
     background: var(--moss);
   }
 
-  /* SECTION TITLE */
+  /* SECTION LABEL & TITLE */
   .section-label {
     font-size: 10px;
     letter-spacing: 0.25em;
@@ -221,7 +219,7 @@
 
   .section-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(26px, 5vw, 38px);
+    font-size: clamp(26px, 6vw, 38px);
     font-weight: 300;
     color: var(--brown-dark);
     line-height: 1.2;
@@ -234,17 +232,17 @@
   .inside-grid {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
     margin: 32px 0;
   }
 
   .inside-item {
     display: flex;
     align-items: flex-start;
-    gap: 20px;
+    gap: 18px;
     background: var(--white);
     border-radius: 12px;
-    padding: 20px;
+    padding: 18px;
     border: 1px solid var(--beige-dark);
   }
 
@@ -263,7 +261,7 @@
   }
 
   .inside-title {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     color: var(--brown-dark);
     letter-spacing: 0.05em;
@@ -280,7 +278,7 @@
   /* FAQ */
   .faq-item {
     border-bottom: 1px solid var(--beige-dark);
-    padding: 24px 0;
+    padding: 22px 0;
   }
 
   .faq-q {
@@ -297,13 +295,12 @@
     line-height: 1.7;
   }
 
-  /* PRICE */
+  /* PRICE BLOCK */
   .price-block {
     background: var(--beige);
     border-radius: 16px;
-    padding: 48px 32px;
+    padding: 48px 28px;
     text-align: center;
-    margin: 0;
     border: 1px solid var(--beige-dark);
   }
 
@@ -312,16 +309,14 @@
     color: var(--text-light);
     text-decoration: line-through;
     margin-bottom: 6px;
-    font-family: 'Jost', sans-serif;
-    font-weight: 300;
   }
 
   .price-badge {
     display: inline-block;
     background: var(--moss);
     color: #fff;
-    font-size: 11px;
-    letter-spacing: 0.1em;
+    font-size: 10px;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     padding: 4px 14px;
     border-radius: 20px;
@@ -344,6 +339,7 @@
     line-height: 1.6;
   }
 
+  /* CTA BUTTONS */
   .cta-btn {
     display: block;
     width: 100%;
@@ -352,8 +348,8 @@
     background: var(--brown-dark);
     color: #FDFAF5;
     font-family: 'Jost', sans-serif;
-    font-size: 13px;
-    letter-spacing: 0.15em;
+    font-size: 12px;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     font-weight: 400;
     padding: 18px 32px;
@@ -362,6 +358,7 @@
     border: none;
     cursor: pointer;
     transition: background 0.2s, transform 0.15s;
+    text-align: center;
   }
 
   .cta-btn:hover {
@@ -369,10 +366,50 @@
     transform: translateY(-1px);
   }
 
+  /* inline CTA (between content) */
+  .cta-inline {
+    padding: 40px 24px;
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
   .cta-note {
     font-size: 12px;
     color: var(--text-light);
     margin-top: 16px;
+    text-align: center;
+  }
+
+  /* IMAGE */
+  .img-block {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 32px 0;
+    background: var(--beige);
+    aspect-ratio: 16/9;
+  }
+
+  .img-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* HIGHLIGHT QUOTE */
+  .highlight-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(19px, 4vw, 26px);
+    font-style: italic;
+    color: var(--brown);
+    text-align: center;
+    padding: 36px 20px;
+    line-height: 1.5;
+    border-top: 1px solid var(--beige-dark);
+    border-bottom: 1px solid var(--beige-dark);
+    margin: 40px 0;
   }
 
   /* OFERTA */
@@ -411,7 +448,7 @@
   .oferta-content.open { display: block; }
 
   .oferta-content h3 {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
     color: var(--text-main);
     margin: 16px 0 6px;
@@ -421,27 +458,6 @@
 
   .oferta-content h3:first-child { margin-top: 0; }
 
-  /* IMAGE PLACEHOLDERS */
-  .img-block {
-    width: 100%;
-    border-radius: 12px;
-    overflow: hidden;
-    margin: 32px 0;
-    background: var(--beige);
-    aspect-ratio: 16/9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .img-block img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  /* FOOTER */
   footer {
     text-align: center;
     padding: 32px 24px;
@@ -449,57 +465,22 @@
     color: var(--text-light);
     border-top: 1px solid var(--beige-dark);
   }
-
-  /* DECORATIVE */
-  .leaf-divider {
-    text-align: center;
-    color: var(--moss-light);
-    font-size: 22px;
-    margin: 40px 0;
-    letter-spacing: 12px;
-    opacity: 0.6;
-  }
-
-  .highlight-quote {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(20px, 4vw, 28px);
-    font-style: italic;
-    color: var(--brown);
-    text-align: center;
-    padding: 40px 24px;
-    line-height: 1.5;
-    border-top: 1px solid var(--beige-dark);
-    border-bottom: 1px solid var(--beige-dark);
-    margin: 48px 0;
-  }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
+<!-- ═══ HERO — первый экран ═══ -->
 <div class="hero">
   <div class="hero-inner">
     <p class="hero-eyebrow">Гайд по питанию</p>
-    <h1>Low FODMAP протокол<br>для <em>чувствительного</em> ЖКТ</h1>
-    <p class="hero-subtitle">Меню на 14 дней + полный этап реинтродукции.<br>За тебя уже всё продумано.</p>
-    <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-number">54</div>
-        <div class="stat-label">страницы</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">77</div>
-        <div class="stat-label">рецептов</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">14</div>
-        <div class="stat-label">дней меню</div>
-      </div>
-    </div>
+    <h1>Low FODMAP<br>протокол для<br><em>чувствительного</em><br>ЖКТ</h1>
+    <p class="hero-subtitle" style="margin-top:16px;">Меню на 14 дней + полный этап реинтродукции.<br>За тебя уже всё продумано.</p>
+    <a href="#" class="cta-btn" onclick="scrollToPrice(event)">Получить гайд</a>
   </div>
+  <div class="hero-scroll-hint">читать далее</div>
 </div>
 
-<!-- PAIN -->
+<!-- ═══ БОЛЬ ═══ -->
 <div class="section">
   <div class="pain-block">
     <p>Ты когда-нибудь отказывалась от встречи, потому что боялась, что живот предаст тебя в самый неподходящий момент?</p>
@@ -517,7 +498,7 @@
 
 <div class="section-divider"></div>
 
-<!-- STORY -->
+<!-- ═══ ИСТОРИЯ ═══ -->
 <div class="section" style="padding-top: 0;">
   <span class="section-label" style="text-align:center; display:block;">Моя история</span>
   <h2 class="section-title" style="text-align:center;">Несколько лет я <em>не понимала правил игры</em></h2>
@@ -547,7 +528,7 @@
 
 <div class="section-divider"></div>
 
-<!-- УЗНАВАНИЕ -->
+<!-- ═══ УЗНАВАНИЕ ═══ -->
 <div class="section" style="padding-top: 0;">
   <span class="section-label" style="text-align:center; display:block;">Ты знаешь это чувство</span>
   <h2 class="section-title" style="text-align:center;">Если ты читаешь это —<br><em>ты знаешь, как это</em></h2>
@@ -569,7 +550,7 @@
 
 <div class="section-divider"></div>
 
-<!-- РЕШЕНИЕ -->
+<!-- ═══ РЕШЕНИЕ ═══ -->
 <div class="section" style="padding-top: 0;">
   <span class="section-label" style="text-align:center; display:block;">Решение</span>
   <h2 class="section-title" style="text-align:center;">Я сделала для тебя то,<br><em>чего не было у меня</em></h2>
@@ -585,9 +566,14 @@
   </div>
 </div>
 
+<!-- ═══ КНОПКА 2 (после второй картинки) ═══ -->
+<div class="cta-inline">
+  <a href="#" class="cta-btn" onclick="scrollToPrice(event)">Получить гайд</a>
+</div>
+
 <div class="section-divider"></div>
 
-<!-- ЧТО ВНУТРИ -->
+<!-- ═══ ЧТО ВНУТРИ ═══ -->
 <div class="section" style="padding-top: 0;">
   <span class="section-label" style="text-align:center; display:block;">Содержание</span>
   <h2 class="section-title" style="text-align:center;">Что ты <em>получишь</em></h2>
@@ -640,7 +626,7 @@
 
 <div class="section-divider"></div>
 
-<!-- FAQ -->
+<!-- ═══ FAQ (перенесён в конец) ═══ -->
 <div class="section" style="padding-top: 0;">
   <span class="section-label" style="text-align:center; display:block;">Вопросы</span>
   <h2 class="section-title" style="text-align:center;">Ты можешь <em>сомневаться</em></h2>
@@ -665,8 +651,8 @@
 
 <div class="section-divider"></div>
 
-<!-- PRICE -->
-<div class="section" style="padding-top: 0;">
+<!-- ═══ ЦЕНА (якорь для прокрутки) ═══ -->
+<div class="section" style="padding-top: 0;" id="price-section">
   <div class="price-block">
     <div class="price-badge">Специальная цена</div>
     <div class="price-old">3 200 ₽</div>
@@ -675,12 +661,12 @@
       Единоразовая оплата. Файл остаётся у тебя навсегда.<br>
       Мгновенная доставка на email после оплаты.
     </div>
-    <a href="#" class="cta-btn">Получить гайд</a>
+    <a href="#" class="cta-btn" id="main-cta">Получить гайд</a>
     <p class="cta-note">Нажимая кнопку, вы соглашаетесь с <button onclick="document.getElementById('oferta-text').classList.toggle('open')" style="background:none;border:none;padding:0;cursor:pointer;font-size:12px;color:var(--text-muted);text-decoration:underline;font-family:'Jost',sans-serif;">условиями публичной оферты</button></p>
   </div>
 </div>
 
-<!-- OFERTA -->
+<!-- ═══ ОФЕРТА ═══ -->
 <div class="oferta-section">
   <div class="section" style="padding: 40px 24px;">
     <button class="oferta-toggle" onclick="document.getElementById('oferta-text').classList.toggle('open')">
@@ -694,17 +680,17 @@
       <h3>2. Предмет договора</h3>
       <p>Исполнитель обязуется оказать Заказчику информационно-консультационные услуги, а Заказчик обязуется оплатить их в размере, порядке и сроки, установленные настоящим Договором. Акцепт настоящей Оферты выражается в оплате услуг Заказчиком.</p>
       <h3>3. Права и обязанности сторон</h3>
-      <p>Исполнитель обязуется оказать услуги в надлежащем качестве. Заказчик обязуется своевременно произвести оплату и предоставить необходимую информацию. Заказчик имеет право осуществлять контроль за ходом оказания услуг, не вмешиваясь в деятельность Исполнителя.</p>
+      <p>Исполнитель обязуется оказать услуги в надлежащем качестве. Заказчик обязуется своевременно произвести оплату и предоставить необходимую информацию.</p>
       <h3>4. Стоимость и порядок расчётов</h3>
       <p>Стоимость услуг определяется на сайте Исполнителя. Все расчёты производятся в безналичном порядке. Возврат денежных средств осуществляется в соответствии с законодательством РФ (Закон о защите прав потребителей от 07.02.1992 №2300-1). Срок ответа на претензию — 10 рабочих дней.</p>
       <h3>5. Конфиденциальность</h3>
-      <p>При реализации настоящего Договора Стороны обеспечивают конфиденциальность и безопасность персональных данных в соответствии с ФЗ от 27.07.2006 г. № 152-ФЗ «О персональных данных».</p>
+      <p>Стороны обеспечивают конфиденциальность и безопасность персональных данных в соответствии с ФЗ от 27.07.2006 г. № 152-ФЗ «О персональных данных».</p>
       <h3>6. Форс-мажор</h3>
-      <p>Стороны освобождаются от ответственности за неисполнение обязательств, если надлежащее исполнение оказалось невозможным вследствие непреодолимой силы (стихийные бедствия, запретные действия властей, эпидемии и т.д.).</p>
+      <p>Стороны освобождаются от ответственности за неисполнение обязательств вследствие непреодолимой силы (стихийные бедствия, запретные действия властей, эпидемии и т.д.).</p>
       <h3>7. Ответственность сторон</h3>
       <p>В случае неисполнения обязательств по Договору, Стороны несут ответственность в соответствии с законодательством Российской Федерации.</p>
       <h3>8. Срок действия оферты</h3>
-      <p>Оферта вступает в силу с момента её размещения и действует до момента её отзыва Исполнителем. Договор действует до полного исполнения Сторонами обязательств.</p>
+      <p>Оферта вступает в силу с момента её размещения и действует до момента её отзыва Исполнителем.</p>
       <h3>Реквизиты исполнителя</h3>
       <p>ИП Евменчик Ольга Сергеевна<br>
       ИНН: 222261679928<br>
@@ -719,6 +705,13 @@
   <p>© 2024 Евменчик Ольга Сергеевна · ИНН 222261679928</p>
   <p style="margin-top: 6px;">Данный продукт является информационным и не заменяет консультацию врача</p>
 </footer>
+
+<script>
+  function scrollToPrice(e) {
+    e.preventDefault();
+    document.getElementById('price-section').scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
 
 </body>
 </html>
