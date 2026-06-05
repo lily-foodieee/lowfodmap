@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Спасибо за покупку — Low FODMAP протокол</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F5F0E8;
+    --beige: #EDE5D4;
+    --beige-dark: #D9CCBA;
+    --brown: #8B6F5C;
+    --brown-dark: #5C4033;
+    --moss: #6B7A5A;
+    --moss-pale: #E8EDE0;
+    --text-main: #3A2E27;
+    --text-muted: #7A6A60;
+    --text-light: #A89888;
+    --white: #FDFAF5;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    background: var(--cream);
+    color: var(--text-main);
+    line-height: 1.75;
+    font-size: 16px;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 56px 24px;
+    text-align: center;
+    max-width: 520px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--moss-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 32px;
+    font-size: 28px;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--moss);
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(30px, 8vw, 44px);
+    line-height: 1.2;
+    color: var(--brown-dark);
+    margin-bottom: 16px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--moss);
+  }
+
+  .subtitle {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+
+  .download-btn {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto 16px;
+    background: var(--brown-dark);
+    color: #FDFAF5;
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 18px 32px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    text-align: center;
+  }
+
+  .download-btn:hover {
+    background: var(--brown);
+    transform: translateY(-1px);
+  }
+
+  .note {
+    font-size: 12px;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-top: 8px;
+  }
+
+  .divider {
+    width: 40px;
+    height: 1px;
+    background: var(--beige-dark);
+    margin: 40px auto;
+  }
+
+  .tips {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 24px 20px;
+    text-align: left;
+    border: 1px solid var(--beige-dark);
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .tips-title {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--moss);
+    margin-bottom: 14px;
+    text-align: center;
+  }
+
+  .tips li {
+    list-style: none;
+    padding: 7px 0 7px 22px;
+    position: relative;
+    font-size: 13px;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--beige-dark);
+    line-height: 1.5;
+  }
+
+  .tips li:last-child { border-bottom: none; }
+
+  .tips li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 15px;
+    width: 10px;
+    height: 1px;
+    background: var(--moss);
+  }
+
+  footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 11px;
+    color: var(--text-light);
+    border-top: 1px solid var(--beige-dark);
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="icon">🌿</div>
+  <p class="eyebrow">Покупка подтверждена</p>
+  <h1>Твой гайд<br><em>готов к скачиванию</em></h1>
+  <p class="subtitle">
+    Спасибо за покупку! Нажми кнопку ниже,<br>
+    чтобы скачать Low FODMAP протокол.
+  </p>
+
+  <a href="https://drive.google.com/uc?export=download&id=1PkFvnBLfKhN-DEWAX3auZB3FBzKF923g" class="download-btn">
+    Скачать гайд
+  </a>
+  <p class="note">
+    Файл откроется в Google Drive.<br>
+    Сохрани его на телефон — он останется у тебя навсегда.
+  </p>
+
+  <div class="divider"></div>
+
+  <div class="tips">
+    <p class="tips-title">С чего начать</p>
+    <ul>
+      <li>Сначала прочитай общую информацию о протоколе</li>
+      <li>Изучи расширенный список триггеров</li>
+      <li>Открой меню на день 1 и составь список покупок</li>
+      <li>Познакомься со схемой добавок до начала диеты</li>
+      <li>Раздел реинтродукции читай на 3-й неделе</li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  © 2024 Евменчик Ольга Сергеевна · Данный продукт является информационным и не заменяет консультацию врача
+</footer>
+
+</body>
+</html>
